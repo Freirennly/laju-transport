@@ -93,7 +93,8 @@ Route::middleware(['auth:api', 'is_admin'])->group(function () {
     // Manajemen User
     Route::get('/admin/users', [UserController::class, 'index']);       
     Route::post('/admin/users', [UserController::class, 'store']);      
-    Route::delete('/admin/users/{id}', [UserController::class, 'destroy']); 
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy']);
+    Route::put('/admin/users/{id}', [UserController::class, 'update']);
 
     // System Config
     Route::post('/admin/trigger-reminders', [AdvancedController::class, 'triggerReminders']); 
