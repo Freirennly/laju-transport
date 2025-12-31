@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from './context/AuthContext';
+import { Analytics } from "@vercel/analytics/react"
 
 // Pages
 import Dashboard from './pages/admin/Dashboard';
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/admin/schedules" element={<AdminRoute><AdminSchedule /></AdminRoute>} /> {/* NEW */}
                 <Route path="/admin/blogs" element={<AdminRoute><AdminBlog /></AdminRoute>} /> {/* NEW */}
             </Routes>
+            <Analytics />
         </Router>
       </AuthProvider>
     </QueryClientProvider>
